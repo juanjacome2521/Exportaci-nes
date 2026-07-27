@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520">
+<style>text{font-family:Arial,sans-serif;fill:#172033}.title{font-size:22px;font-weight:bold}.sub{font-size:13px;fill:#526174}.axis{font-size:12px;fill:#526174}.legend{font-size:13px}</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="90" y="30" class="title">Cambio en la composición exportadora</text>
+<text x="90" y="49" class="sub">Participación en las exportaciones totales · 2014–2025</text>
+<line x1="90" y1="55" x2="90" y2="445" stroke="#94a3b8"/>
+<line x1="90" y1="445" x2="920" y2="445" stroke="#94a3b8"/>
+<line x1="90" y1="445.0" x2="920" y2="445.0" stroke="#e2e8f0"/>
+<text x="78" y="449.0" text-anchor="end" class="axis">0%</text>
+<line x1="90" y1="367.0" x2="920" y2="367.0" stroke="#e2e8f0"/>
+<text x="78" y="371.0" text-anchor="end" class="axis">20%</text>
+<line x1="90" y1="289.0" x2="920" y2="289.0" stroke="#e2e8f0"/>
+<text x="78" y="293.0" text-anchor="end" class="axis">40%</text>
+<line x1="90" y1="211.0" x2="920" y2="211.0" stroke="#e2e8f0"/>
+<text x="78" y="215.0" text-anchor="end" class="axis">60%</text>
+<line x1="90" y1="133.0" x2="920" y2="133.0" stroke="#e2e8f0"/>
+<text x="78" y="137.0" text-anchor="end" class="axis">80%</text>
+<line x1="90" y1="55.0" x2="920" y2="55.0" stroke="#e2e8f0"/>
+<text x="78" y="59.0" text-anchor="end" class="axis">100%</text>
+<text x="90.0" y="469" text-anchor="middle" class="axis">2014</text>
+<text x="165.5" y="469" text-anchor="middle" class="axis">2015</text>
+<text x="240.9" y="469" text-anchor="middle" class="axis">2016</text>
+<text x="316.4" y="469" text-anchor="middle" class="axis">2017</text>
+<text x="391.8" y="469" text-anchor="middle" class="axis">2018</text>
+<text x="467.3" y="469" text-anchor="middle" class="axis">2019</text>
+<text x="542.7" y="469" text-anchor="middle" class="axis">2020</text>
+<text x="618.2" y="469" text-anchor="middle" class="axis">2021</text>
+<text x="693.6" y="469" text-anchor="middle" class="axis">2022</text>
+<text x="769.1" y="469" text-anchor="middle" class="axis">2023</text>
+<text x="844.5" y="469" text-anchor="middle" class="axis">2024</text>
+<text x="920.0" y="469" text-anchor="middle" class="axis">2025</text>
+<text x="90" y="505" class="axis">Porcentaje</text>
+<polyline points="90.0,243.4 165.5,303.3 240.9,318.2 316.4,304.0 391.8,286.1 467.3,293.4 542.7,344.4 618.2,319.3 693.6,306.6 769.1,332.8 844.5,336.5 920.0,363.6" fill="none" stroke="#b45309" stroke-width="3"/>
+<polyline points="90.0,256.6 165.5,196.7 240.9,181.8 316.4,196.0 391.8,213.9 467.3,206.6 542.7,155.6 618.2,180.7 693.6,193.4 769.1,167.2 844.5,163.5 920.0,136.4" fill="none" stroke="#047857" stroke-width="3"/>
+<text x="100" y="92" class="legend" fill="#b45309">Petroleras</text><text x="220" y="92" class="legend" fill="#047857">No petroleras</text>
+</svg>

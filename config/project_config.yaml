@@ -1,0 +1,13 @@
+project: exportaciones_ecuador
+country: Ecuador
+period:
+  start: 2014
+  end: 2025
+frequency: annual
+currency: USD
+valuation: FOB
+units: millions
+paths:
+  raw_data: data/raw/exportaciones_anuales.csv
+  clean_data: data/processed/exportaciones_anuales_limpias.csv
+  indicators: data/processed/indicadores_exportaciones.csv

@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboard interactivo de exportaciones petroleras y no petroleras del Ecuador (2014-2025). Datos oficiales del Banco Central del Ecuador.">
+  <title>Dashboard | Exportaciones del Ecuador 2014–2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        </div>
+        <div class="brand-text">
+          <h1>Comercio Exterior <strong>Ecuador</strong></h1>
+          <span class="subtitle">Análisis Macroenconómico 2014 – 2025 · Fuente: BCE</span>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="themeToggle" class="icon-btn" title="Cambiar tema" aria-label="Cambiar tema">
+          <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+        <button id="downloadCsv" class="btn btn-secondary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Exportar CSV
+        </button>
+        <button id="printReport" class="btn btn-primary">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          Imprimir Reporte
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-shell">
+      <!-- Hero & Control Panel -->
+      <section class="hero-banner">
+        <div class="hero-content">
+          <div class="badge-pill">
+            <span class="pulse-dot"></span>
+            Evolución de la Matriz Exportadora
+          </div>
+          <h2>Transformación del Perfil Exportador del Ecuador</h2>
+          <p class="hero-desc">
+            Entre 2014 y 2025, el Ecuador redujo fuertemente su dependencia petrolera: las exportaciones no petroleras aumentaron su participación del <strong>48,30%</strong> al <strong>79,14%</strong> del valor total FOB.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-card">
+          <div class="filter-group">
+            <label for="seriesFilter">Filtrar Serie:</label>
+            <select id="seriesFilter" class="custom-select">
+              <option value="all">Ver Todas las Series</option>
+              <option value="non_oil">Solo No Petroleras</option>
+              <option value="oil">Solo Petroleras</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="yearStart">Período:</label>
+            <div class="range-inputs">
+              <span id="rangeVal">2014 – 2025</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KPI Grid -->
+      <section class="kpi-grid" aria-label="Indicadores Clave">
+        <div class="kpi-card glass highlight-blue">
+          <div class="kpi-header">
+            <span class="kpi-title">Exportaciones Totales (2025)</span>
+            <div class="kpi-icon blue">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+          </div>
+          <div class="kpi-body">
+            <strong class="kpi-value" id="kpiTotal">USD 37.152,0 M</strong>
+            <div class="kpi-meta positive">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+              <span>+7,93% vs 2024</span>
+            </div>
+          </div>
+          <div class="kpi-sparkline" id="sparkTotal"></div>
+        </div>
+
+        <div class="kpi-card glass highlight-emerald">
+          <div class="kpi-header">
+            <span class="kpi-title">No Petroleras (2025)</span>
+            <div class="kpi-icon emerald">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.12 2 7 0 6-4 11-10 11Z"/><path d="M9 10a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1H9Z"/></svg>
+            </div>
+          </div>
+          <div class="kpi-body">
+            <strong class="kpi-value" id="kpiNonOil">USD 29.401,9 M</strong>
+            <div class="kpi-meta positive">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+              <span>+18,32% interanual</span>
+            </div>
+          </div>
+          <div class="kpi-sparkline" id="sparkNonOil"></div>
+        </div>
+
+        <div class="kpi-card glass highlight-amber">
+          <div class="kpi-header">
+            <span class="kpi-title">Petroleras (2025)</span>
+            <div class="kpi-icon amber">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+            </div>
+          </div>
+          <div class="kpi-body">
+            <strong class="kpi-value" id="kpiOil">USD 7.750,1 M</strong>
+            <div class="kpi-meta negative">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              <span>-19,03% vs 2024</span>
+            </div>
+          </div>
+          <div class="kpi-sparkline" id="sparkOil"></div>
+        </div>
+
+        <div class="kpi-card glass highlight-purple">
+          <div class="kpi-header">
+            <span class="kpi-title">Participación No Petrolera</span>
+            <div class="kpi-icon purple">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg>
+            </div>
+          </div>
+          <div class="kpi-body">
+            <strong class="kpi-value" id="kpiShare">79,14%</strong>
+            <div class="kpi-meta neutral">
+              <span>+30,84 pp frente a 2014 (48,3%)</span>
+            </div>
+          </div>
+          <div class="kpi-progress">
+            <div class="progress-bar" style="width: 79.14%"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Visualizations Grid -->
+      <section class="grid-layout two-col">
+        <!-- Interactive Main Chart -->
+        <div class="panel-card glass chart-panel">
+          <div class="panel-header">
+            <div>
+              <h3>Evolución Histórica de Exportaciones (2014–2025)</h3>
+              <p class="panel-sub">Valores expresados en millones de USD FOB</p>
+            </div>
+            <div class="chart-legend" id="mainChartLegend">
+              <span class="legend-item"><i class="dot blue"></i> Exportaciones Totales</span>
+              <span class="legend-item"><i class="dot emerald"></i> No Petroleras</span>
+              <span class="legend-item"><i class="dot amber"></i> Petroleras</span>
+            </div>
+          </div>
+          <div class="chart-container" id="trendChartContainer">
+            <!-- SVG Main Chart rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Donut Chart & Breakdown -->
+        <div class="panel-card glass donut-panel">
+          <div class="panel-header">
+            <h3>Composición de Exportaciones 2025</h3>
+            <p class="panel-sub">Participación porcentual en el total FOB</p>
+          </div>
+          <div class="donut-container" id="donutContainer">
+            <!-- SVG Donut Chart rendered dynamically -->
+          </div>
+          <div class="donut-stats">
+            <div class="stat-row">
+              <div class="stat-label"><i class="dot emerald"></i> No Petroleras</div>
+              <div class="stat-value">USD 29.401,9 M <span>(79,14%)</span></div>
+            </div>
+            <div class="stat-row">
+              <div class="stat-label"><i class="dot amber"></i> Petroleras</div>
+              <div class="stat-value">USD 7.750,1 M <span>(20,86%)</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-layout two-col lower">
+        <!-- Interannual Growth Bar Chart -->
+        <div class="panel-card glass">
+          <div class="panel-header">
+            <h3>Variación Interanual No Petrolera (%)</h3>
+            <p class="panel-sub">Crecimiento % anual en exportaciones no petroleras</p>
+          </div>
+          <div class="chart-container short" id="barChartContainer">
+            <!-- SVG Bar Chart rendered dynamically -->
+          </div>
+        </div>
+
+        <!-- Key Insights & Executive Findings -->
+        <div class="panel-card glass">
+          <div class="panel-header">
+            <h3>Puntos Clave del Análisis</h3>
+            <p class="panel-sub">Hallazgos cuantitativos de la serie oficial BCE</p>
+          </div>
+          <div class="insights-list">
+            <div class="insight-item">
+              <div class="insight-badge">01</div>
+              <div class="insight-content">
+                <strong>Caída de la dependencia petrolera</strong>
+                <p>Las exportaciones petroleras pasaron de USD 13.302,5 M en 2014 a USD 7.750,1 M en 2025, cayendo un -41,7% en valor nominal.</p>
+              </div>
+            </div>
+            <div class="insight-item">
+              <div class="insight-badge">02</div>
+              <div class="insight-content">
+                <strong>Concentración en 4 productos clave</strong>
+                <p>Camarón, Cacao, Banano y Minería alcanzaron USD 21.495,3 M en 2025, concentrando el <strong>73,2%</strong> del total no petrolero.</p>
+              </div>
+            </div>
+            <div class="insight-item">
+              <div class="insight-badge">03</div>
+              <div class="insight-content">
+                <strong>Efecto mixto de Volumen y Precio</strong>
+                <p>El incremento del 18,3% en 2025 combinó un aumento de +9,5% en volumen exportado y +8,0% en precios promedio de venta.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products Table Section -->
+      <section class="panel-card glass table-panel">
+        <div class="panel-header table-header">
+          <div>
+            <h3>Principales Productos No Petroleros (2025)</h3>
+            <p class="panel-sub">Ranking por valor de exportación expresado en millones de USD FOB</p>
+          </div>
+          <div class="table-controls">
+            <input type="text" id="tableSearch" class="search-input" placeholder="Buscar producto..." aria-label="Buscar producto">
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th class="sortable" data-sort="name">Producto <span class="sort-icon">↕</span></th>
+                <th class="sortable" data-sort="type">Clasificación <span class="sort-icon">↕</span></th>
+                <th class="sortable num" data-sort="val">USD Millones <span class="sort-icon">↕</span></th>
+                <th class="sortable num" data-sort="share">Participación <span class="sort-icon">↕</span></th>
+                <th class="sortable num" data-sort="growth">Variación 2024-2025 <span class="sort-icon">↕</span></th>
+              </tr>
+            </thead>
+            <tbody id="productsTableBody">
+              <!-- Dynamically rendered -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <span>Dashboard Analítico · Serie Histórica Banco Central del Ecuador (2014-2025)</span>
+        <span>Metodología &amp; Documentación en <a href="docs/metodologia.md" target="_blank" rel="noopener">docs/metodologia.md</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+tasks:
+  - id: data_collection
+    output: data/raw/exportaciones_anuales.csv
+  - id: cleaning
+    command: python scripts/clean_data.py
+  - id: validation
+    command: python scripts/validate_data.py
+  - id: indicators
+    command: python scripts/calculate_indicators.py
+  - id: report
+    output: docs/reporte_final.md

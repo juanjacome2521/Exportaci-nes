@@ -1,0 +1,14 @@
+sources:
+  - name: Banco Central del Ecuador (BCE)
+    priority: primary
+    use: serie principal de exportaciones por tipo, producto y destino
+    url: https://contenido.bce.fin.ec/documentos/Estadisticas/SectorExterno/BalanzaPagos/balanzaComercial/
+    notes: Usar valores FOB y guardar la fecha de descarga y enlace exacto del archivo utilizado.
+  - name: UN Comtrade
+    priority: secondary
+    use: contraste por partidas y destinos
+    url: https://comtradeplus.un.org/
+  - name: Banco Mundial
+    priority: contextual
+    use: indicadores macroeconómicos complementarios
+    url: https://data.worldbank.org/country/ecuador

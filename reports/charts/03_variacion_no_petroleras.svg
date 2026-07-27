@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520">
+<style>text{font-family:Arial,sans-serif;fill:#172033}.title{font-size:22px;font-weight:bold}.sub{font-size:13px;fill:#526174}.axis{font-size:12px;fill:#526174}.legend{font-size:13px}</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="90" y="30" class="title">Variación anual de exportaciones no petroleras</text>
+<text x="90" y="49" class="sub">2015–2025 · porcentaje frente al año anterior</text>
+<line x1="90" y1="55" x2="90" y2="445" stroke="#94a3b8"/>
+<line x1="90" y1="445" x2="920" y2="445" stroke="#94a3b8"/>
+<line x1="90" y1="445.0" x2="920" y2="445.0" stroke="#e2e8f0"/>
+<text x="78" y="449.0" text-anchor="end" class="axis">-10%</text>
+<line x1="90" y1="367.0" x2="920" y2="367.0" stroke="#e2e8f0"/>
+<text x="78" y="371.0" text-anchor="end" class="axis">-3%</text>
+<line x1="90" y1="289.0" x2="920" y2="289.0" stroke="#e2e8f0"/>
+<text x="78" y="293.0" text-anchor="end" class="axis">4%</text>
+<line x1="90" y1="211.0" x2="920" y2="211.0" stroke="#e2e8f0"/>
+<text x="78" y="215.0" text-anchor="end" class="axis">11%</text>
+<line x1="90" y1="133.0" x2="920" y2="133.0" stroke="#e2e8f0"/>
+<text x="78" y="137.0" text-anchor="end" class="axis">18%</text>
+<line x1="90" y1="55.0" x2="920" y2="55.0" stroke="#e2e8f0"/>
+<text x="78" y="59.0" text-anchor="end" class="axis">25%</text>
+<text x="90.0" y="469" text-anchor="middle" class="axis">2015</text>
+<text x="173.0" y="469" text-anchor="middle" class="axis">2016</text>
+<text x="256.0" y="469" text-anchor="middle" class="axis">2017</text>
+<text x="339.0" y="469" text-anchor="middle" class="axis">2018</text>
+<text x="422.0" y="469" text-anchor="middle" class="axis">2019</text>
+<text x="505.0" y="469" text-anchor="middle" class="axis">2020</text>
+<text x="588.0" y="469" text-anchor="middle" class="axis">2021</text>
+<text x="671.0" y="469" text-anchor="middle" class="axis">2022</text>
+<text x="754.0" y="469" text-anchor="middle" class="axis">2023</text>
+<text x="837.0" y="469" text-anchor="middle" class="axis">2024</text>
+<text x="920.0" y="469" text-anchor="middle" class="axis">2025</text>
+<text x="90" y="505" class="axis">Variación interanual</text>
+<rect x="66.6" y="333.6" width="46.8" height="68.1" fill="#b91c1c"/>
+<text x="90.0" y="418.7" text-anchor="middle" class="axis">-6.1%</text>
+<rect x="149.6" y="333.6" width="46.8" height="31.6" fill="#b91c1c"/>
+<text x="173.0" y="382.2" text-anchor="middle" class="axis">-2.8%</text>
+<rect x="232.6" y="248.0" width="46.8" height="85.6" fill="#047857"/>
+<text x="256.0" y="241.0" text-anchor="middle" class="axis">7.7%</text>
+<rect x="315.6" y="279.2" width="46.8" height="54.4" fill="#047857"/>
+<text x="339.0" y="272.2" text-anchor="middle" class="axis">4.9%</text>
+<rect x="398.6" y="260.0" width="46.8" height="73.5" fill="#047857"/>
+<text x="422.0" y="253.0" text-anchor="middle" class="axis">6.6%</text>
+<rect x="481.6" y="214.8" width="46.8" height="118.8" fill="#047857"/>
+<text x="505.0" y="207.8" text-anchor="middle" class="axis">10.7%</text>
+<rect x="564.6" y="113.3" width="46.8" height="220.3" fill="#047857"/>
+<text x="588.0" y="106.3" text-anchor="middle" class="axis">19.8%</text>
+<rect x="647.6" y="150.0" width="46.8" height="183.5" fill="#047857"/>
+<text x="671.0" y="143.0" text-anchor="middle" class="axis">16.5%</text>
+<rect x="730.6" y="275.2" width="46.8" height="58.4" fill="#047857"/>
+<text x="754.0" y="268.2" text-anchor="middle" class="axis">5.2%</text>
+<rect x="813.6" y="199.2" width="46.8" height="134.4" fill="#047857"/>
+<text x="837.0" y="192.2" text-anchor="middle" class="axis">12.1%</text>
+<rect x="896.6" y="129.4" width="46.8" height="204.1" fill="#047857"/>
+<text x="920.0" y="122.4" text-anchor="middle" class="axis">18.3%</text>
+</svg>

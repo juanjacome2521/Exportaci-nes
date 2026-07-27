@@ -1,0 +1,11 @@
+# Ignore python backend files for static site deployment on Vercel
+scripts/
+tests/
+requirements.txt
+config/
+docs/
+notebooks/
+agents/
+subagents/
+prompts/
+.venv/
